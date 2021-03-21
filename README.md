@@ -1,4 +1,4 @@
-# Neural_Network_From_Scratch
+# I Built a Neural Network From Scratch
 ### NOTE: A lot of code is referenced from online
 Why waste time reinventing the wheel?
 
