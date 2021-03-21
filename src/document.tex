@@ -1,0 +1,138 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+
+\begin{document}
+\begin{titlepage}
+\title{Theory Review \\ Neural Networks
+	}
+\author{\\
+ Avinash Shekar}
+\date{March 18, 2021}
+\maketitle
+\end{titlepage}
+
+
+
+\textbf{3}\bigskip \\
+$\theta_0,\theta_1$ and $\theta_2$ are the weights \smallskip \\
+$\theta_0$ is the negative distance from origin. Also know as bias. \smallskip \\
+$\theta_1,\theta_2$ is normal vector that shows the orientation of the boundary.
+
+\textbf{5}\bigskip \\
+The bias is outside the dot product \smallskip \\
+$g(x) = \theta_0 + \theta^{T}X$ \smallskip \\
+Augment 1 to X inputs and $\theta_0$ to weights vector to get \smallskip \\
+$\theta = [\theta_0 \dots \theta_n]$ \smallskip \\
+$X = [1,X_1, \dots X_n]$
+
+\textbf{6}\bigskip \\
+Step function: $g(x) = \theta_0 + \theta_1 X_1 + \dots + \theta_n X_n = \theta^{T}X$\smallskip \\
+Logistic function: $h_{\theta}(x) = \frac{1}{1+exp(-\theta^{T}X)}$\bigskip \\
+When $\theta$ is 0, the logistic function becomes a straight line.
+
+\textbf{7}\bigskip \\
+To model as a linear function:\smallskip \\
+$log(\frac{P(Y=1|X)}{P(Y=0|X)}) = \theta^{T}X$\smallskip \\
+Taking exponents on both sides \smallskip \\
+$\frac{P(Y=1|X)}{P(Y=0|X)} = exp(\theta^{T}X)$ \smallskip \\
+Rearrange and we get \smallskip \\
+$P(Y=1|X)(1+exp(\theta^{T}X)=exp(\theta^{T}X)$ \smallskip \\
+$P(Y=1|X) = \frac{1}{1+exp(-\theta^{T}X)} = h_{\theta}X$ \smallskip \\
+if $h_{\theta}X$ > 0.5 then class 1 \smallskip \\
+otherwise, class 2
+
+
+\textbf{8}\bigskip \\
+$\frac{d}{dx}sigmoid(X) = sigmoid(X)(1-sigmoid(x))$ \bigskip \\
+$\frac{d}{dx}$ log $sigmoid(X) = \frac{1}{sigmoid(X)}sigmoid(X)(1-sigmoid(X))$ \bigskip \\
+$\frac{d}{dx}$ log $sigmoid(X) = 1-sigmoid(X)$ \bigskip \\
+
+\textbf{9}\bigskip \\
+$\theta^{i+1} = \theta^{i} - \eta \nabla$J$\theta^{i}$\bigskip \\
+We compute the derivative (gradient) and take the negative of it as the direction to update parameters.\smallskip\\
+$\eta$ is the learning rate. We can use it to control the size of updating the parameters.
+
+\textbf{10}\bigskip \\
+Stop the iterative process when difference in loss compared to previous step is less than a threshold value\bigskip \\
+$(J(\theta^{i+1})-J(\theta^{i})) < Threshold$ \smallskip \\
+The condition should use the loss change as it the objective to minimize loss. A small change in parameters will not reflect a small loss change.
+
+\textbf{11}\bigskip \\
+Small $\eta$ means that loss change is slow and could end up hitting the threshold. \smallskip \\
+Large $\eta$ could end up overshooting the minimum value and may never converge after many iterations. \smallskip \\
+
+\textbf{12}\bigskip \\
+Empirical loss is simply the sum of miss-classifications.\smallskip \\
+$E(\theta) = $ class 1 errors + class 2 errors + $\dots$ \bigskip\\
+This will be a piece-wise constant function. The gradient at any given point would be zero indicating no change in loss.
+
+\textbf{13}\bigskip \\
+log likelihood = $log(\prod_{X^{i}\in c1}P(Y=1|X^{i})\prod_{X^{i}\in c0}P(Y=0|X^{i}))$ \smallskip\\
+Combining both parts by raising to power of 1 when relevant \smallskip \\
+$log\prod_{i=1}^{m}P(Y=1|X^{i})^{y^{i}}P(Y=0|X^{i})^{1-y^{i}}$ \smallskip \\
+Taking log of product to get sum \smallskip \\
+$\sum_{i=1}^{m}y^{i}log(P(Y=1|X^{i}))+(1-y^{i})log(1-P(Y=1|X^{i}))$ \smallskip \\
+$l(\theta) = \sum_{i=1}^{m}y^{i}log(h_{\theta}(X^{i}))+(1-y^{i})log(1-h_{\theta}(X^{i}))$ \bigskip \\
+Where, $y^{i}$ = 1 when class 1\\
+$(1-y^{i})$ = 1 when class 0\\
+$h_{\theta}(X^{i})$ is prediction \bigskip \\
+
+
+\textbf{14}\bigskip \\
+$\frac{d}{d\theta}l(\theta) = \frac{d}{d\theta}\sum_{i=1}^{m}y^{i}log(h_{\theta}(X^{i}))+(1-y^{i})log(1-h_{\theta}(X^{i}))$ \smallskip \\
+taking derivative and simplifying, we get \smallskip \\
+$\sum_{i=1}^{m}y^{i}(1-h_{\theta}(X^{i})X^{i})+\sum_{i=1}^{m}(1-y^{i})(-h_{\theta}(X^{i})X^{i})$\smallskip \\
+$\sum_{i=1}^{m}(y^{i}-y^{i}h_{\theta}(X^{i})-h_{\theta}(X^{i})+y^{i}h_{\theta}(X^{i}))X^{i}$\smallskip \\
+$\sum_{i=1}^{m}(y^{i}-h_{\theta}(X^{i}))X^{i}$\smallskip \\
+$\frac{d}{d\theta}(-l(\theta))=\sum_{i=1}^{m}(y^{i}-h_{\theta}(X^{i}))X^{i}$ \bigskip \\
+In the above equation, \\
+$(y^{i}-h_{\theta}(X^{i}))$ is equal to 1 or -1 only when actuals disagree with predictions. So, the negative log likelihood is simply the sum over all feature vectors.
+
+\textbf{15}\bigskip \\
+One against all others:\smallskip \\
+$\hat{y} = argmax_{j}g_{j}(X)$ \smallskip \\
+The predicted value depends on the maximum value of the distance between the input X and the discriminant boundary. As usual, the value on one side of boundary will be positive which classifies input X. If a value resides in the region where two or more discriminant functions show positive value, then the maximum of them would correspond to the class. \smallskip \\
+If there are k classes, then there will be k discriminant functions.
+One against each other:\smallskip \\
+$\hat{y} = argmax_{i}\sum_{j\neq i}g_{ij}(X)$\smallskip \\
+The predicted value depends on the maximum value of sum of distance between the input X and all other discriminant boundary. The maximum of this value will classify given input X.\smallskip\\
+If there are k classes, then there will be $\frac{k(k-1)}{2}$ discriminant.\smallskip\\
+When data is clustered close to one another, it is easier to use one against each other to discriminate the data. When data is far apart, one against all other does a fairly good job.
+
+\textbf{17}\bigskip \\
+Softmax is same as sigmoid with one against all other approach. A sigmoid will classify between 2 classes. Softmax will take proportion of probability of one class over the probability of all other classes. This way, the sum of all probabilities will be equal to 1. Otherwise, the equation would not stand valid with probability > 1.\smallskip \\
+$\hat{y}_{j} = P(y=j|X) = h_{\theta_j}(X)=\frac{exp(\theta_{j}^{T})}{\sum_{i=1}^{k}exp(\theta_{j}^{T})}$ \smallskip \\
+Here, numerator is the probability of y belongs to j given X. Denominator is the probability of all other probabilities.\bigskip \\
+
+asdad \\
+asdada\\
+
+\textbf{18}\bigskip \\
+$\frac{d}{d\theta_{i}}softmax(\theta_j^{T}X) = softmax(\theta_j^{T}X)(\delta_{ij}-softmax(\theta_j^{T}X))X$\smallskip \\
+$\frac{d}{d\theta_{i}}$log$softmax(\theta_j^{T}X) = \frac{1}{softmax(\theta_j^{T}X)}softmax(\theta_j^{T}X)(\delta_{ij}-softmax(\theta_j^{T}X))X$\smallskip \\
+$\frac{d}{d\theta_{i}}$log$softmax(\theta_j^{T}X) = \delta_{ij}-softmax(\theta_j^{T}X)X$\smallskip \\
+Where $\delta_{ij}$ = 1 when j and 0 otherwise
+
+\textbf{19}\bigskip \\
+Log likelihood for binary cross-entropy:\smallskip \\
+$l(\theta)=log \prod_{i=1}^{m}P(y=1|X^{(i)})^{y(i)}P(y=0|X^{(i)})^{(1-y^{i})}$ \smallskip \\
+When $y^{(i)}$ = 0 then the first term will be 1. When $y^{(i)}$ = 1, the second term will be 1.\smallskip \\
+can be written as:\smallskip \\
+$l(\theta) = \prod_{i=1}^{m}P(y=1|X^{(i)})^{1(y^{(i)}=1)}P(y=0|X^{(i)})^{1(y^{(i)}=0)}$\smallskip \\
+Similarly for multiclass, the log likelihood of categorical cross-entropy will be:\smallskip \\
+$l(\theta) = log(\prod_{i=1}^{m}\prod_{j=1}^{k}P(y^{(i)}=j|X^{(i)})^{1(y^{(i)}=j)})$\smallskip \\
+In the k class problem, the product of probabilities will only be considered for classes when $y^{(i)}=j$. Taking log we get the summation as follows\smallskip \\
+$l(\theta) = \sum_{i=1}^{m}\sum_{j=1}^{k}1(y^{(i)}=j)log P(y^{(i)}=j|X^{(i)})$\smallskip \\
+$l(\theta) = \sum_{i=1}^{m}\sum_{j=1}^{k}1(y^{(i)}=j)log(h_{\theta_j}X^{(i)})$\bigskip \\
+
+\textbf{20}\bigskip \\
+$\frac{d}{d\theta_j}(-l(\theta)) = \sum_{i=1}^{m}(h_{\theta_j}(X^{(i)})-1(y^{(i)}=j))X^{(i)}$\smallskip \\
+Above equation is the sum of all features where classifications have gone wrong. Here's how:\smallskip \\
+$(h_{\theta_j}(X^{(i)})-1(y^{(i)}=j))$ is the prediction. $1(y^{(i)}=j)$ is the indicator that negates the accurate classifications. So, we will be left with the sum of inaccurate classifications over m rows.\smallskip \\
+$\theta_{j} \gets \theta_{j}-\eta\sum_{i=1}^{m}(h_{\theta_j}(X^{(i)})-1(y^{(i)}=j))X{(i)}$ \smallskip \\
+Where $\theta_j$ are the parameters.\\
+$\eta$ is the learning rate.\\
+gradient is the derivative of negative log likelihood.\bigskip \\
+
+\end{document}
