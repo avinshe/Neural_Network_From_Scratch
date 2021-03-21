@@ -1,5 +1,5 @@
 # I Built a Neural Network From Scratch
-### NOTE: A lot of code is referenced from online
+### NOTE: A lot of code is referenced from online. I guess I did not start from scratch.
 Why waste time reinventing the wheel?
 
 To put myself in the shoes of the inventor and feel his/her pain. 
