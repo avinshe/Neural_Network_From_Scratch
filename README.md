@@ -1,4 +1,4 @@
-# I Built a Neural Network From Scratch
+# Building a Neural Network From Scratch
 
 Why waste time reinventing the wheel?
 
