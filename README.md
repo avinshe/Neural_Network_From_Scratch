@@ -8,7 +8,7 @@ After spending months in classroom learning the statistical computation behind a
 
 Honestly, the code sucks with time complexity O(epochs*input_size). But it does the job and classifies with good accuracy. Perhaps, if I spent more time with literature review, I would be able to optimize the code. Who knows? Maybe I can build a whole new AI megacity if I spend enough time. No, I’m not crazy. I took an online assessment that said I’m very normal :)
 
-### NOTE: Few parts of code is referenced from online. I guess I did not start from scratch. Don't come at me bruh! I'm confessing before you find out.
+### NOTE: Few parts of code is referenced from online. I guess I did not technically start from scratch. Don't come at me bruh! I'm confessing before you find out.
 
 Implementations:
 1. Hidden Layer
