@@ -2,7 +2,7 @@
 
 Why waste time reinventing the wheel?
 
-To put myself in the shoes of the inventor and feel his/her pain. 
+To put myself in the shoes of the inventor and feel his/her/their pain. 
 
 After spending months in classroom learning the statistical computation behind artificial neurons, layers, losses, and back propagation, it almost feels like I am cheating when I provide inputs to a package and have it spitting out the results. I started writing simple non-linear equations like sigmoid and softmax. Eventually got to defining loss function and updating weights through back propagation.
 
