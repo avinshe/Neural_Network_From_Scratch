@@ -8,8 +8,6 @@ After spending months in classroom learning the statistical computation behind a
 
 Honestly, the code is not great with time complexity O(epochs*input_size). But, it does the job of classification with good accuracy. Perhaps, if I spent more time with literature review, I would be able to optimize the code. Who knows? Maybe I can build a whole new AI megacity if I spend enough time. No, I’m not crazy. I took an online assessment that said I’m very normal :)
 
-### NOTE: Parts of code are referenced from online. I guess I did not technically start from scratch. Don't come at me bruh! I'm confessing before you find out.
-
 Implementations:
 1. Hidden Layer
     - Sigmoid Activation
@@ -30,3 +28,5 @@ Implementations:
 6. Testing
     - UCI ML Database - Flag data Training Accuracy 96%, Validation Accuracy 94%
     - UCI ML Database - Iris data Training Accuracy 97%,Validation Accuracy 97%
+
+### NOTE: Parts of code are referenced from online. I guess I did not technically start from scratch. Don't come at me bruh! I'm confessing before you find out.
