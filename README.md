@@ -6,7 +6,7 @@ To put myself in the shoes of the inventor and feel his/her/their pain.
 
 After spending months in classroom learning the statistical computation behind artificial neurons, layers, losses, and back propagation, it almost feels like I am cheating when I provide inputs to a package and have it spitting out the results. I started writing simple non-linear equations like sigmoid and softmax. Eventually got to defining loss function and updating weights through back propagation.
 
-Honestly, the code is not great with time complexity O(epochs*input_size). But it does the job and classifies with good accuracy. Perhaps, if I spent more time with literature review, I would be able to optimize the code. Who knows? Maybe I can build a whole new AI megacity if I spend enough time. No, I’m not crazy. I took an online assessment that said I’m very normal :)
+Honestly, the code is not great with time complexity O(epochs*input_size). But, it does the job of classification with good accuracy. Perhaps, if I spent more time with literature review, I would be able to optimize the code. Who knows? Maybe I can build a whole new AI megacity if I spend enough time. No, I’m not crazy. I took an online assessment that said I’m very normal :)
 
 ### NOTE: Parts of code are referenced from online. I guess I did not technically start from scratch. Don't come at me bruh! I'm confessing before you find out.
 
