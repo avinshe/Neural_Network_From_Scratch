@@ -2,9 +2,9 @@
 
 Why waste time reinventing the wheel?
 
-To put myself in the shoes of the inventor and feel his/her/their pain. How can I expect to improve/work on a product if I do not know how to create it in the first place? Why be bound to packages when you can redefine and suit your needs? After spending months in the classroom learning the statistical computation behind artificial neurons, layers, losses, and backpropagation, it almost felt like I was cheating when I provided inputs to a package and it magically gives out the results. 
+After spending months in the classroom, learning the statistical computation behind artificial neurons, layers, losses, gradients, and backpropagation, it almost felt like I was cheating when I provided inputs to a package and magically arrived at the results. 
 
-I started writing simple non-linear equations like sigmoid and softmax. Eventually got to defining loss function and updating weights through backpropagation. Honestly, the code is not great with time complexity O(epochs*input_size). But, it does the job of classification with good accuracy. Perhaps, if I spent more time on literature review, I would be able to optimize the code. Who knows? Maybe I can build a whole new AI megacity if I spend enough time :)
+I started writing simple non-linear equations like sigmoid and softmax. Eventually got to defining loss function and updating weights through backpropagation. Honestly, the code is not great with time complexity O(epochs*input_size). But, it does the job of classification with good accuracy.
 
 Implementation:
 1. Hidden Layer
@@ -27,4 +27,4 @@ Implementation:
     - UCI ML Database - Flag data Training Accuracy 96%, Validation Accuracy 94%
     - UCI ML Database - Iris data Training Accuracy 97%,Validation Accuracy 97%
 
-### NOTE: Parts of code are referenced from online. I guess I did not technically start from scratch. Don't come at me bruh! I'm confessing before you find out.
+### NOTE: Parts of code are referenced from online.
