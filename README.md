@@ -26,5 +26,3 @@ Implementation:
 6. Testing
     - UCI ML Database - Flag data Training Accuracy 96%, Validation Accuracy 94%
     - UCI ML Database - Iris data Training Accuracy 97%,Validation Accuracy 97%
-
-### NOTE: Parts of code are referenced from online.
